@@ -1,0 +1,81 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ff0000;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: #0099ff;
+            border: 1px solid #001eff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+        }
+        .card p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="container"></div>
+
+    <script>
+        const pokemon = [
+            { name: 'Bulbassauro', type: 'Grama/Veneno', number: 1, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' },
+            { name: 'Charmander', type: 'Fogo', number: 4, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png' },
+            { name: 'Squirtle', type: 'Água', number: 7, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' },
+            { name: 'Pikachu', type: 'Elétrico', number: 25, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png' },
+            { name: 'Jigglypuff', type: 'Fada', number: 39, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' },
+            { name: 'Meowth', type: 'Normal', number: 52, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png' },
+            { name: 'Psyduck', type: 'Água', number: 54, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png' },
+            { name: 'Machop', type: 'Lutador', number: 66, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png' },
+            { name: 'Eevee', type: 'Normal', number: 133, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png' },
+            { name: 'Snorlax', type: 'Normal', number: 143, image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png' }
+        ];
+
+        for (const poke of pokemon) {
+            container.innerHTML += `
+
+                <div class="card">
+                    <img src="${poke.image}" alt="${poke.name}">
+                    <h3>${poke.name}</h3>
+                    <p>Tipo: ${poke.type}</p>
+                    <p>Número: ${poke.number}</p>
+                </div>
+
+            `;
+        }
+    </script>
+</body>
+</html>
